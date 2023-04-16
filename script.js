@@ -1,0 +1,25 @@
+
+const btnNavEl = document.querySelector(".btn btn--full margin-right-sm")
+
+
+
+
+function checkFlexGap(){
+    var flex = document.createElement("div");
+    flex.style.display = "flex";
+    flex.style.flexDirection = "Column";
+    flex.style.rowGap = "1px";
+
+    flex.appendChild(document.createElement("div"));
+    flex.appendChild(document.createElement("div"));
+
+    document.body.appendChild(flex);
+    var isSupported = flex.scrollHeight ===1;
+    flex.parentNode.removeChild(flex);
+    console.log(isSupported);
+
+
+    if(!isSupported) document.body.classList.add("no-flexbox-gap");
+}
+
+checkFlexGap();
